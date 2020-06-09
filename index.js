@@ -37,7 +37,7 @@ function eslint(options = {}) {
         return null;
       }
 
-      const report = cli.executeOnText(code, file);
+      const report = cli.executeOnFiles([file]);
       const hasWarnings = options.throwOnWarning && report.warningCount !== 0;
       const hasErrors = options.throwOnError && report.errorCount !== 0;
 
